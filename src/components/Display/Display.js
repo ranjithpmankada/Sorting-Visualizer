@@ -4,7 +4,7 @@ import './display.scss';
 const Display = ({array}) => {
     return (
         <div className='array-container'>
-            {array.map((number, index) => {
+            {array.map((number, index, array) => {
                 const height = number;
                 return (
                     <div 
@@ -12,7 +12,7 @@ const Display = ({array}) => {
                         className = 'array-element'
                         style= {{
                             height: `${(height)}%`,
-                            width: '1vw',
+                            width: `1vw`,
                             backgroundColor: `rgba(66, 134, 244, 0.8)`,
                             marginRight: '1px'
                             }} />

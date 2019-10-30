@@ -8,18 +8,21 @@ export const  insertionSort = (array) => {
         animation.push([select, [i]]);
         j = i -1;
         animation.push([select, [j]]);
-        while(j >= 0 &&  array[j] > key) {
-            let temp;
-            animation.push([compare,[j,i]]);
-            temp = array[j];
-            array[j] = key;
-            array[j+1] = temp;
-            animation.push([swap, [j,j+1]]);
-            key = array[j];
-            j = j-1;
-            if( j>=0 ){
-                animation.push([select, j]);
+        while(j >= 0) {
+            if(array[j] > key) {
+                let temp;
+                animation.push([compare,[j,j+1]]);
+                temp = array[j];
+                array[j] = key;
+                array[j+1] = temp;
+                animation.push([swap, [j,j+1]]);
+                key = array[j];
             }
+            j = j-1;
+                if( j>=0 ){
+                    animation.push([select, j+1]);
+                    animation.push([select, j]);
+                }
         }
         
     }

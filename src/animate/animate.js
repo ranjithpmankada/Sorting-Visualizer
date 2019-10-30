@@ -25,16 +25,15 @@ export const animate = (animationArray, arrayElements) => {
                     arrayElements[arrayElement].style.backgroundColor = 'blue'; break;   
                 case -1:         
                     arrayElements[arrayElement[0]].style.backgroundColor= 'red';
-                    arrayElements[arrayElement[1]].style.backgroundColor='red';; break;
+                    arrayElements[arrayElement[1]].style.backgroundColor='red'; break;
                 case 1: 
                     arrayElements[arrayElement[0]].style.backgroundColor='green';
                     arrayElements[arrayElement[1]].style.backgroundColor='green';
                     let height1 = arrayElements[arrayElement[0]].style.height;
                     let height2 = arrayElements[arrayElement[1]].style.height;
-                    console.log('height'+ height2)
                     arrayElements[arrayElement[0]].style.height = height2;
-                    arrayElements[arrayElement[1]].style.height = height1;
+                    arrayElements[arrayElement[1]].style.height = height1;break;
             }
-        }, 10*i);
+        }, 10+1000*i);
     }
 }
