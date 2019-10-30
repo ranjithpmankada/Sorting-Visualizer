@@ -34,6 +34,6 @@ export const animate = (animationArray, arrayElements) => {
                     arrayElements[arrayElement[0]].style.height = height2;
                     arrayElements[arrayElement[1]].style.height = height1;break;
             }
-        }, 10+1000*i);
+        }, 10+10*i);
     }
 }

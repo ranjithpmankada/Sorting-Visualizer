@@ -10,7 +10,7 @@ const SortingVisualizer = () => {
     
     const [array, setArray] = useState([]);
     const [array_size, setArraySize] = useState(30);
-    const [selectedAlgorithm, setAlgorithm] = useState('bubbleSort');
+    const [selectedAlgorithm, setAlgorithm] = useState('insertionSort');
     const [isRunning, setRunning] = useState(false);
 
     const generateArray = () => {

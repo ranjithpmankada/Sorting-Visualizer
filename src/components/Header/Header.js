@@ -46,12 +46,13 @@ const Header = (props) => {
                         </button>
                     </div>
                     <div className='container'>
-                        <label name="array-size" htmlFor="array-size"></label>
+                        <label name="array-size-label" htmlFor="array-size"></label>
                         <input 
                             id="array-size" 
+                            className='range-selector'
                             type="range" 
                             min="5" 
-                            max="1000" 
+                            max="50" 
                             disabled={isRunning}
                             onChange = { event => {
                                 setArraySize(parseInt(event.target.value));
