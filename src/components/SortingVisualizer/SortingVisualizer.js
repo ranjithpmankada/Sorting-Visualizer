@@ -27,11 +27,11 @@ const SortingVisualizer = () => {
 
     const sort = () => {
         setRunning(true);
-        console.log(array);
         let arr = array.slice(0);
         const animationArray = getAnimatedArray(arr, selectedAlgorithm);
         const arrayElements = document.getElementsByClassName('array-element');
         animate(animationArray, arrayElements);  
+         console.log('sortarray'+array)
     };
 
     useState(() => {

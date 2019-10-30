@@ -40,12 +40,12 @@ const Header = (props) => {
                         <button 
                             id='sort'
                             className='button sort-button'
-                            onClick = {sort}
+                            onClick = {isRunning ? null : sort}
                             >
                             Sort
                         </button>
                     </div>
-                    <div className='container'>
+                    <div className='range-container'>
                         <label name="array-size-label" htmlFor="array-size"></label>
                         <input 
                             id="array-size" 

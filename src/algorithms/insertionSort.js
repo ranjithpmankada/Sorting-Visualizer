@@ -26,6 +26,6 @@ export const  insertionSort = (array) => {
         }
         
     }
-    console.log('Array'+  array)
+    console.log('insertionArray'+  array)
     return animation;
 }
