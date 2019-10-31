@@ -7,7 +7,6 @@
     }
 }
 .nav {
-    background-color: #1C2D57;
 }
 .range-selector {
     display: flex;
@@ -71,12 +70,26 @@
         outline: 0;
     }
 }
-.menu-options {
+
+// Options
+.main-options {
+    background-color: #1C2D57;
     display: flex;
     width: 100%;
     justify-content: space-between;
     padding: 4px 8px;
 }
+.additional-options {
+    display: flex;
+    flex-direction: row;
+    padding: 12px;
+    & .container {
+        background-color: rebeccapurple;
+        border-radius: 8px;
+        padding: 12px;
+    }
+}
+
 @media screen and ( min-width: 768px) {
     .shuffle-button {
         & svg { margin-right: 8px; }

@@ -25,21 +25,22 @@ const SortingVisualizer = () => {
         setArray(array);
     };
 
-    const sort = () => {
+    async function sort () {
         setRunning(true);
         let arr = array.slice(0);
         const animationArray = getAnimatedArray(arr, selectedAlgorithm);
         const arrayElements = document.getElementsByClassName('array-element');
         animate(animationArray, arrayElements);  
-         console.log('sortarray'+array)
+        await setRunning(false);
     };
 
     useState(() => {
         generateArray();
     });
+    let s = isRunning? 'hidden' : 'block';
 
     return (
-        <div className='app-container'>
+        <React.Fragment className='app-container'>
             <Header 
                 array= {array} 
                 arraySize = {array_size}
@@ -49,12 +50,12 @@ const SortingVisualizer = () => {
                 sort = { sort }
                 generateArray = {generateArray}
                 isRunning = {isRunning}
-                
             />
             <Display 
                 array={array} 
             />
-        </div>
-    )
-}
+        </React.Fragment>
+    );
+};
+
 export default SortingVisualizer;

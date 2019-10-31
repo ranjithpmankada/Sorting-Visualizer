@@ -17,7 +17,7 @@ const Header = (props) => {
         <header className='header'>
             <div className='container'>
                 <nav className='nav'>
-                    <div className="menu-options">
+                    <div className="main-options">
                         <button 
                             className='button shuffle-button' 
                             id='array_generate_button'
@@ -28,15 +28,15 @@ const Header = (props) => {
                             <span>Shuffle</span>
                         </button>
                         <select 
-                                className='select' 
-                                value={selectedAlgorithm} 
-                                onChange={(event) => setAlgorithm(event.target.value)}
-                                disabled={isRunning}>
+                            className='select' 
+                            value={selectedAlgorithm} 
+                            onChange={(event) => setAlgorithm(event.target.value)}
+                            disabled={isRunning}>
                                 <option value='mergeSort'>Merge Sort</option>
                                 <option value='selectionSort'>Selection Sort</option>
                                 <option value='bubbleSort'>Bubble Sort</option>
                                 <option value='insertionSort'>Insertion Sort </option>
-                            </select>
+                        </select>
                         <button 
                             id='sort'
                             className='button sort-button'
@@ -45,21 +45,33 @@ const Header = (props) => {
                             Sort
                         </button>
                     </div>
-                    <div className='range-container'>
-                        <label name="array-size-label" htmlFor="array-size"></label>
-                        <input 
-                            id="array-size" 
-                            className='range-selector'
-                            type="range" 
-                            min="5" 
-                            max="50" 
-                            disabled={isRunning}
-                            onChange = { event => {
-                                setArraySize(parseInt(event.target.value));
-                                generateArray();
-                            }}
-                            value = {arraySize}
-                            />
+                    <div className='additional-options'>
+                        <div className='container'>
+                            <label name="array-size-label" htmlFor="animation-speed"></label>
+                            <input 
+                                id="animation-speed" 
+                                className='range-selector'
+                                type="range" 
+                                min="5" 
+                                max="1000" 
+                                />
+                        </div>
+                        <div className='container'>
+                            <label name="array-size-label" htmlFor="array-size"></label>
+                            <input 
+                                id="array-size" 
+                                className='range-selector'
+                                type="range" 
+                                min="5" 
+                                max="50" 
+                                disabled={isRunning}
+                                onChange = { event => {
+                                    setArraySize(parseInt(event.target.value));
+                                    generateArray();
+                                }}
+                                value = {arraySize}
+                                />
+                        </div>
                     </div>
 
                 </nav>
