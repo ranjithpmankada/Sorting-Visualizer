@@ -15,7 +15,7 @@ export const getAnimatedArray = (array, algorithm) => {
 };
 
 
-export const  animate = (animationArray, arrayElements) => {
+export const  animate = (animationArray, arrayElements, speed) => {
     return new Promise((resolve, reject) => {
         for(let i = 0; i < animationArray.length; i++) {
             setTimeout(() => {
@@ -35,7 +35,7 @@ export const  animate = (animationArray, arrayElements) => {
                         arrayElements[arrayElement[0]].style.height = height2;
                         arrayElements[arrayElement[1]].style.height = height1;break;
                 }
-            }, 10+100*i);
+            }, 10+(1200-speed)*i);
         }
     })
   

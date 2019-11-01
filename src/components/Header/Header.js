@@ -11,6 +11,8 @@ const Header = (props) => {
         isRunning,
         selectedAlgorithm,
         setAlgorithm,
+        animSpeed,
+        setAnimSpeed
     } = props;
 
     return (
@@ -52,8 +54,10 @@ const Header = (props) => {
                                 id="animation-speed" 
                                 className='range-selector'
                                 type="range" 
-                                min="5" 
+                                min="20" 
                                 max="1000" 
+                                value = { animSpeed }
+                                onChange = { event => setAnimSpeed(parseInt(event.target.value)) }
                                 />
                         </div>
                         <div className='container'>
@@ -63,11 +67,11 @@ const Header = (props) => {
                                 className='range-selector'
                                 type="range" 
                                 min="5" 
-                                max="50" 
+                                max="100" 
                                 disabled={isRunning}
-                                onChange = { event => {
-                                    setArraySize(parseInt(event.target.value));
-                                    generateArray();
+                                onChange = { async event => {
+                                    await setArraySize(parseInt(event.target.value));
+                                    await generateArray();
                                 }}
                                 value = {arraySize}
                                 />

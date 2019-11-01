@@ -8,10 +8,12 @@ import './visualizer.scss';
 
 const SortingVisualizer = () => {
     
+    // States
     const [array, setArray] = useState([]);
     const [array_size, setArraySize] = useState(30);
     const [selectedAlgorithm, setAlgorithm] = useState('insertionSort');
     const [isRunning, setRunning] = useState(false);
+    const [animSpeed, setAnimSpeed] = useState(40);
 
     const generateArray = () => {
         const array = [];
@@ -30,7 +32,7 @@ const SortingVisualizer = () => {
         let arr = array.slice(0);
         const animationArray = getAnimatedArray(arr, selectedAlgorithm);
         const arrayElements = document.getElementsByClassName('array-element');
-        animate(animationArray, arrayElements);  
+        animate(animationArray, arrayElements, animSpeed);  
         await setRunning(false);
     };
 
@@ -40,7 +42,7 @@ const SortingVisualizer = () => {
     let s = isRunning? 'hidden' : 'block';
 
     return (
-        <React.Fragment className='app-container'>
+        <React.Fragment>
             <Header 
                 array= {array} 
                 arraySize = {array_size}
@@ -50,6 +52,8 @@ const SortingVisualizer = () => {
                 sort = { sort }
                 generateArray = {generateArray}
                 isRunning = {isRunning}
+                animSpeed = {animSpeed}
+                setAnimSpeed = {setAnimSpeed}
             />
             <Display 
                 array={array} 
