@@ -22,4 +22,4 @@ const Display = ({array}) => {
         )
 }
 
-export default Display;
+export default React.memo(Display);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ShuffleIcon from '../icons/shuffle';
 import './header.scss';
 
@@ -20,36 +20,43 @@ const Header = (props) => {
             <div className='container'>
                 <nav className='nav'>
                     <div className="main-options">
-                        <button 
-                            className='button shuffle-button' 
-                            id='array_generate_button'
-                            onClick = {isRunning ? null: generateArray}
-                            disabled={isRunning}
-                            >
-                            <ShuffleIcon/>
-                            <span>Shuffle</span>
-                        </button>
-                        <select 
-                            className='select' 
-                            value={selectedAlgorithm} 
-                            onChange={(event) => setAlgorithm(event.target.value)}
-                            disabled={isRunning}>
-                                <option value='mergeSort'>Merge Sort</option>
-                                <option value='selectionSort'>Selection Sort</option>
-                                <option value='bubbleSort'>Bubble Sort</option>
-                                <option value='insertionSort'>Insertion Sort </option>
-                        </select>
-                        <button 
-                            id='sort'
-                            className='button sort-button'
-                            onClick = {isRunning ? null : sort}
-                            >
-                            Sort
-                        </button>
+                        <div>
+                            <button 
+                                className='button shuffle-button' 
+                                id='array_generate_button'
+                                onClick = {isRunning ? null: generateArray}
+                                disabled={isRunning}
+                                >
+                                <ShuffleIcon/>
+                                <span>Shuffle</span>
+                            </button>
+                        </div>
+                        <div>
+                            <select 
+                                className='select' 
+                                value={selectedAlgorithm} 
+                                onChange={(event) => setAlgorithm(event.target.value)}
+                                disabled={isRunning}>
+                                    <option value='mergeSort'>Merge Sort</option>
+                                    <option value='selectionSort'>Selection Sort</option>
+                                    <option value='bubbleSort'>Bubble Sort</option>
+                                    <option value='insertionSort'>Insertion Sort </option>
+                            </select>
+                        </div>
+                        <div>
+                            <button 
+                                id='sort'
+                                className='button sort-button'
+                                onClick = {isRunning ? null : sort}
+                                >
+                                Sort
+                            </button>
+                        </div>
+
                     </div>
                     <div className='additional-options'>
                         <div className='container'>
-                            <label name="array-size-label" htmlFor="animation-speed"></label>
+                            <label name="array-size-label" htmlFor="animation-speed">Speed</label>
                             <input 
                                 id="animation-speed" 
                                 className='range-selector'
@@ -61,13 +68,13 @@ const Header = (props) => {
                                 />
                         </div>
                         <div className='container'>
-                            <label name="array-size-label" htmlFor="array-size"></label>
+                            <label name="array-size-label" htmlFor="array-size">Array Size</label>
                             <input 
                                 id="array-size" 
                                 className='range-selector'
                                 type="range" 
                                 min="5" 
-                                max="100" 
+                                max='100'
                                 disabled={isRunning}
                                 onChange = { async event => {
                                     await setArraySize(parseInt(event.target.value));

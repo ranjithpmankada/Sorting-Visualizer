@@ -8,13 +8,16 @@ import './visualizer.scss';
 
 const SortingVisualizer = () => {
     
-    // States
+    /**
+     * States
+     */
     const [array, setArray] = useState([]);
     const [array_size, setArraySize] = useState(30);
     const [selectedAlgorithm, setAlgorithm] = useState('insertionSort');
     const [isRunning, setRunning] = useState(false);
-    const [animSpeed, setAnimSpeed] = useState(40);
+    const [animSpeed, setAnimSpeed] = useState(900);
 
+    // Function to generate new array and set the state 'array'
     const generateArray = () => {
         const array = [];
         const [min, max] = [0, 100];
@@ -39,7 +42,6 @@ const SortingVisualizer = () => {
     useState(() => {
         generateArray();
     });
-    let s = isRunning? 'hidden' : 'block';
 
     return (
         <React.Fragment>
@@ -49,7 +51,7 @@ const SortingVisualizer = () => {
                 setArraySize = {setArraySize}
                 selectedAlgorithm = {selectedAlgorithm}
                 setAlgorithm = {setAlgorithm}
-                sort = { sort }
+                sort = {sort}
                 generateArray = {generateArray}
                 isRunning = {isRunning}
                 animSpeed = {animSpeed}
