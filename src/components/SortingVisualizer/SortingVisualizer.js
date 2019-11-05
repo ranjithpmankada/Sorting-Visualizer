@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import Header from '../Header/Header';
 import Display from '../Display/Display';
 
-import { getAnimatedArray, animate } from '../../animate/animate';
+import { getAnimatedArray, animate } from '../../core/animations/animate';
 import './visualizer.scss';
 
 const SortingVisualizer = () => {
@@ -30,6 +30,7 @@ const SortingVisualizer = () => {
         setArray(array);
     };
 
+    // Function triggered when sort button is clicked
     async function sort () {
         setRunning(true);
         let arr = array.slice(0);
