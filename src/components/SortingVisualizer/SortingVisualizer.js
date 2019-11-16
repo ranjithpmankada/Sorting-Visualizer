@@ -20,7 +20,7 @@ const SortingVisualizer = () => {
     // Function to generate new array and set the state 'array'
     const generateArray = () => {
         const array = [];
-        const [min, max] = [0, 100];
+        const [min, max] = [1, 100];
         while(array.length < array_size) {
             const number = Math.floor(Math.random()*(max - min + 1)) + min;
             if(!array.includes(number)) {
@@ -31,13 +31,12 @@ const SortingVisualizer = () => {
     };
 
     // Function triggered when sort button is clicked
-    async function sort () {
+    async function sortHelper () {
         setRunning(true);
         let arr = array.slice(0);
         const animationArray = getAnimatedArray(arr, selectedAlgorithm);
         const arrayElements = document.getElementsByClassName('array-element');
-        animate(animationArray, arrayElements, animSpeed);  
-        await setRunning(false);
+        await animate(animationArray, arrayElements, animSpeed);  
     };
 
     useState(() => {
@@ -52,9 +51,10 @@ const SortingVisualizer = () => {
                 setArraySize = {setArraySize}
                 selectedAlgorithm = {selectedAlgorithm}
                 setAlgorithm = {setAlgorithm}
-                sort = {sort}
+                sortHelper = {sortHelper}
                 generateArray = {generateArray}
                 isRunning = {isRunning}
+                setRunning = {setRunning}
                 animSpeed = {animSpeed}
                 setAnimSpeed = {setAnimSpeed}
             />

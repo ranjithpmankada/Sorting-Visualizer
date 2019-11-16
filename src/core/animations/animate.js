@@ -35,8 +35,11 @@ export const  animate = (animationArray, arrayElements, speed) => {
                         arrayElements[arrayElement[0]].style.height = height2;
                         arrayElements[arrayElement[1]].style.height = height1;break;
                 }
-            }, 10+(1200-speed)*i);
+                if(i+1 === animationArray.length)
+                    resolve(false);
+            }, 10+(1050-speed)*i);
         }
-    })
+    }
+    )
   
 }

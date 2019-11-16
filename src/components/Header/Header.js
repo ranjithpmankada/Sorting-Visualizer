@@ -7,14 +7,19 @@ const Header = (props) => {
         generateArray,
         arraySize,
         setArraySize,
-        sort,
+        sortHelper,
         isRunning,
+        setRunning,
         selectedAlgorithm,
         setAlgorithm,
         animSpeed,
         setAnimSpeed
     } = props;
-
+    const sortHelperR = () => {
+        sortHelper().then((help) => {
+            setRunning(help)
+        });
+    }
     return (
         <header className='header'>
             <div className='container'>
@@ -29,7 +34,7 @@ const Header = (props) => {
                             <ShuffleIcon/>
                             <span>Shuffle</span>
                         </button>
-                        <select 
+                        {/* <select 
                             className='select' 
                             value={selectedAlgorithm} 
                             onChange={(event) => setAlgorithm(event.target.value)}
@@ -38,11 +43,14 @@ const Header = (props) => {
                                 <option value='selectionSort'>Selection Sort</option>
                                 <option value='bubbleSort'>Bubble Sort</option>
                                 <option value='insertionSort'>Insertion Sort </option>
-                        </select>
+                        </select> */}
+                        <button>
+                            {selectedAlgorithm}
+                        </button>
                         <button 
                             id='sort'
                             className='button sort-button'
-                            onClick = {isRunning ? null : sort}
+                            onClick = {isRunning ? null : sortHelperR}
                             >
                             Sort
                         </button>
@@ -70,12 +78,11 @@ const Header = (props) => {
                                     id="array-size" 
                                     className='range-selector'
                                     type="range" 
-                                    min="5" 
+                                    min="4" 
                                     max='100'
-                                    disabled={isRunning}
-                                    onChange = { async event => {
-                                        await setArraySize(parseInt(event.target.value));
-                                        await generateArray();
+                                    onChange = { event => {
+                                        setArraySize(parseInt(event.target.value));
+                                        generateArray();
                                     }}
                                     value = {arraySize}
                                     />
