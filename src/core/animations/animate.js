@@ -19,27 +19,37 @@ export const  animate = (animationArray, arrayElements, speed) => {
     return new Promise((resolve, reject) => {
         for(let i = 0; i < animationArray.length; i++) {
             setTimeout(() => {
-                const arrayElement = animationArray[i][1];
+                const arrayElement1 = animationArray[i][1];
+                const arrayElement2 = animationArray[i][2];
                 const manipulation = animationArray[i][0];
                 switch(manipulation) {
-                    case 0: 
-                        arrayElements[arrayElement].style.backgroundColor = 'blue'; break;   
-                    case -1:         
-                        arrayElements[arrayElement[0]].style.backgroundColor= 'red';
-                        arrayElements[arrayElement[1]].style.backgroundColor='red'; break;
-                    case 1: 
-                        arrayElements[arrayElement[0]].style.backgroundColor='green';
-                        arrayElements[arrayElement[1]].style.backgroundColor='green';
-                        let height1 = arrayElements[arrayElement[0]].style.height;
-                        let height2 = arrayElements[arrayElement[1]].style.height;
-                        arrayElements[arrayElement[0]].style.height = height2;
-                        arrayElements[arrayElement[1]].style.height = height1;break;
+                    case 'select': 
+                        arrayElements[arrayElement1].style.backgroundColor = '#4F83FB'; 
+                        break;   
+                    case 'compare':         
+                        arrayElements[arrayElement1].style.backgroundColor= '#FB6107';
+                        arrayElements[arrayElement2].style.backgroundColor='#FB6107'; 
+                        break;
+                    case 'swap': 
+                        arrayElements[arrayElement1].style.backgroundColor='#A2D729';
+                        arrayElements[arrayElement2].style.backgroundColor='#A2D729';
+                        let height1 = arrayElements[arrayElement1].style.height;
+                        let height2 = arrayElements[arrayElement2].style.height;
+                        arrayElements[arrayElement1].style.height = height2;
+                        arrayElements[arrayElement2].style.height = height1;
+                        break;
+                    case 'sortedValue':
+                        arrayElements[arrayElement1].style.backgroundColor='black';
+
                 }
                 if(i+1 === animationArray.length)
                     resolve(false);
-            }, 10+(1050-speed)*i);
+            }, (1010-speed)*i);
         }
     }
     )
   
 }
+// E1BA2D yellow
+// 4F83FB blue
+// FF82A9

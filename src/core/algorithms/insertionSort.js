@@ -1,30 +1,27 @@
-export const  insertionSort = (array) => {
-    const [select, compare, swap] = [0, -1, 1];
+import { select, swap, compare } from './operations/operations';
 
-    let i, key, j;
-    let animation= [];
+/**
+ * 
+ * @param {Array} array 
+ * @returns {Array} animation
+ * 
+ */
+export const  insertionSort = (array) => {
+    let key, i, j;
+    let animation = [];
     for(i = 1; i < array.length; i++) {
-        key = array[i]; 
-        animation.push([select, [i]]);
-        j = i -1;
-        animation.push([select, [j]]);
-        while(j >= 0 && array[j] > key) {
-            if(array[j] > key) {
-                let temp;
-                animation.push([compare,[j,j+1]]);
-                temp = array[j];
-                array[j] = key;
-                array[j+1] = temp;
-                animation.push([swap, [j,j+1]]);
-                key = array[j];
-            }
+        key = array[i];
+        select(i, array, animation);
+        j = i-1;
+        select(j, array, animation);  
+        while(j >= 0 && compare(j, j+1, array, animation)) {
+            swap(j, j+1, array, animation);
             j = j-1;
-            if( j>=0 ){
-                animation.push([select, j+1]);
-                animation.push([select, j]);
-            }
-        }
-        
+            if( j >= 0)
+                select(j, array, animation);
+        }  
     }
+    console.log(animation)
     return animation;
+    
 }

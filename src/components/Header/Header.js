@@ -15,6 +15,7 @@ const Header = (props) => {
         animSpeed,
         setAnimSpeed
     } = props;
+    
     const sortHelperR = () => {
         sortHelper().then((help) => {
             setRunning(help)
@@ -34,7 +35,7 @@ const Header = (props) => {
                             <ShuffleIcon/>
                             <span>Shuffle</span>
                         </button>
-                        {/* <select 
+                        <select 
                             className='select' 
                             value={selectedAlgorithm} 
                             onChange={(event) => setAlgorithm(event.target.value)}
@@ -43,10 +44,10 @@ const Header = (props) => {
                                 <option value='selectionSort'>Selection Sort</option>
                                 <option value='bubbleSort'>Bubble Sort</option>
                                 <option value='insertionSort'>Insertion Sort </option>
-                        </select> */}
-                        <button>
+                        </select>
+                        {/* <button>
                             {selectedAlgorithm}
-                        </button>
+                        </button> */}
                         <button 
                             id='sort'
                             className='button sort-button'
@@ -72,7 +73,7 @@ const Header = (props) => {
  
                         </div>
                         <div className='input-container'>
-                            <label name="array-size-label" htmlFor="array-size">Array Size</label>
+                            <label name="array-size-label" htmlFor="array-size">Array size</label>
                             <div className='container'>
                                 <input 
                                     id="array-size" 

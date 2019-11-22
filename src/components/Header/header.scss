@@ -1,7 +1,9 @@
 .header {
     align-items: center;
-    background-color: rgba(230,230,230,0.8);
+    background-color: rgba(200,200,200,0.2);
     font-size: 16px;
+    box-shadow: 0 0 40px rgba(0,0,0,.2);
+
     & .container {
         width: 100%;
     }
@@ -44,6 +46,7 @@
     }
 }
 .sort-button {
+    background-color: transparent;
     padding: 0.6rem 1rem;
     border-radius: 0.1rem;
     background-color: #86ee60;

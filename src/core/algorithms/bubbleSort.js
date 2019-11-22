@@ -1,13 +1,15 @@
+import { select, swap, compare, sortedValue } from './operations/operations';
+
 export const bubbleSort = array => {
-    let i, j, animations_array = [];
+    let i, j, animation = [];
     for(i = 0; i < array.length-1; i++) {
         for(j = 0; j < array.length-1; j++) {
-            if(array[j] > array[j+1]) {
-                const temp = array[j];
-                array[j] = array[j+1];
-                array[j+1] = temp;
+            if(compare(j, j+1, array, animation)) {
+                swap(j, j+1, array, animation);
             }
         }
+        sortedValue(j, array, animation);
     }
-    return animations_array;
+    console.log(animation)
+    return animation;
 }
