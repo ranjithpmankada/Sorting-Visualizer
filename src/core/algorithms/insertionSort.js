@@ -7,10 +7,9 @@ import { select, swap, compare } from './operations/operations';
  * 
  */
 export const  insertionSort = (array) => {
-    let key, i, j;
+    let i, j;
     let animation = [];
     for(i = 1; i < array.length; i++) {
-        key = array[i];
         select(i, array, animation);
         j = i-1;
         select(j, array, animation);  
@@ -21,7 +20,6 @@ export const  insertionSort = (array) => {
                 select(j, array, animation);
         }  
     }
-    console.log(animation)
     return animation;
     
 }
