@@ -39,7 +39,7 @@ export const  animate = (animationArray, arrayElements, speed) => {
                         arrayElements[arrayElement2].style.height = height1;
                         break;
                     case 'sortedValue':
-                        arrayElements[arrayElement1].style.backgroundColor='black';
+                        arrayElements[arrayElement1].style.backgroundColor='#7E007B';
 
                 }
                 if(i+1 === animationArray.length)

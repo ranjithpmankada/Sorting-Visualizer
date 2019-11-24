@@ -3,7 +3,7 @@
     background-color: rgba(200,200,200,0.2);
     font-size: 16px;
     box-shadow: 0 0 40px rgba(0,0,0,.2);
-
+    
     & .container {
         width: 100%;
     }
@@ -31,6 +31,11 @@
 .shuffle-button {
     background-color: none;
     font-size: 1em;
+    &:disabled {
+        cursor: default;
+        & span { color: rgba(255,255,255,0.1);}
+        & svg { fill: rgba(255,255,255,0.1);}
+    }
     &:hover {
         & svg {
             fill: rgba(255,255,255,1);
@@ -54,6 +59,12 @@
     &:hover {
         box-shadow: none;
         opacity: 0.8;
+    }
+    &:disabled {
+        background-color: rgba(255,255,255,0.1);
+        color: rgba(255,255,255,0.2);
+        cursor: default;
+        opacity: 1;
     }
 }
 .select {
@@ -93,6 +104,24 @@
             padding: 12px 0;
         }
     }
+}
+.algorithm-selection-container {
+    position: relative;
+    display: inline-block;
+}
+
+.algorithms {
+    background-color: white;
+    border-radius: 4px;
+    position: absolute;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: top;
+    transition: transform 0.4s ease-in, opacity 0.4s ease-in;
+}
+.aa {
+    transform: scale(1);
+    opacity: 1;
 }
 
 @media screen and ( min-width: 768px) {

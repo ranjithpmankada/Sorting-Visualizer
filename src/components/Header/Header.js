@@ -15,10 +15,13 @@ const Header = (props) => {
         animSpeed,
         setAnimSpeed
     } = props;
-    
+    const toggleClass= (e) => {
+        const a = document.getElementsByClassName('algorithms')[0];
+        a.classList.toggle('aa');
+    }
     const sortHelperR = () => {
         sortHelper().then((help) => {
-            setRunning(help)
+            setRunning(help);
         });
     }
     return (
@@ -35,7 +38,7 @@ const Header = (props) => {
                             <ShuffleIcon/>
                             <span>Shuffle</span>
                         </button>
-                        <select 
+                        {/* <select 
                             className='select' 
                             value={selectedAlgorithm} 
                             onChange={(event) => setAlgorithm(event.target.value)}
@@ -44,14 +47,24 @@ const Header = (props) => {
                                 <option value='selectionSort'>Selection Sort</option>
                                 <option value='bubbleSort'>Bubble Sort</option>
                                 <option value='insertionSort'>Insertion Sort </option>
-                        </select>
-                        {/* <button>
-                            {selectedAlgorithm}
-                        </button> */}
+                        </select> */}
+                        <div className='algorithm-selection-container'>
+                            <button onClick={toggleClass}>
+                                {selectedAlgorithm}
+                            </button>
+                            <div className='algorithms'>
+                                <ul>
+                                    <li>Insertion Sort</li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <button 
                             id='sort'
                             className='button sort-button'
                             onClick = {isRunning ? null : sortHelperR}
+                            disabled = {isRunning}
                             >
                             Sort
                         </button>

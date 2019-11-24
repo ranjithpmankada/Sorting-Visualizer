@@ -15,7 +15,7 @@ const SortingVisualizer = () => {
     const [array_size, setArraySize] = useState(30);
     const [selectedAlgorithm, setAlgorithm] = useState('insertionSort');
     const [isRunning, setRunning] = useState(false);
-    const [animSpeed, setAnimSpeed] = useState(900);
+    const [animSpeed, setAnimSpeed] = useState(1000);
 
     // Function to generate new array and set the state 'array'
     const generateArray = () => {

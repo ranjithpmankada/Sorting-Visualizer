@@ -6,7 +6,7 @@ const Display = ({array}) => {
         <div className='array-container'>
             {array.map((number, index, array) => {
                 const height = number;
-                const width = parseInt((50 / array.length) + 1 );
+                const width = parseInt((50 / array.length)+ 0.5);
                 return (
                     <div 
                         key = { index }
