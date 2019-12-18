@@ -113,7 +113,7 @@
 }
 
 .algorithms {
-    background-color: white;
+    background-color: #1c2d57;
     border-radius: 4px;
     position: absolute;
     top: 61px;
@@ -125,7 +125,7 @@
 }
 .algorithm-list {
     box-shadow: 0 0 10px 3px rgba(100,100,100,0.1);
-    padding: 4vw 5vw;
+    padding: 12px 18px;
     margin: 0;
     & li {
         list-style-type: none;
@@ -133,7 +133,8 @@
             background-color: red;
         }
         & span {
-            padding: 1.6vw;
+            color: rgba(255, 255, 255, 1);
+            padding: 10px 12px;
             display: block;
             text-align: center;
             cursor: pointer;
