@@ -123,9 +123,12 @@
     transform-origin: top;
     transition: transform 0.4s ease-in, opacity 0.4s ease-in;
     &::before {
-        content: '';
-        display: block;
-        background-color: #1c2d57;
+        content: "";
+        position: absolute;
+        border: 10px solid transparent;
+        border-bottom-color:#1c2d57;
+        top: -20px;
+        left: calc(50% - 10px);
     }
 }
 .algorithm-list {
@@ -143,6 +146,7 @@
         & span {
             border-radius: 4px;
             color: rgba(255, 255, 255, 1);
+            font-size: 0.9em;
             padding: 10px 12px;
             display: block;
             text-align: center;
