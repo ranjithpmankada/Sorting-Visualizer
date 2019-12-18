@@ -1,5 +1,7 @@
-import React, {useState, useEffect} from 'react';
-import ShuffleIcon from '../icons/shuffle';
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRandom } from '@fortawesome/free-solid-svg-icons'
+
 import './header.scss';
 
 const Header = (props) => {
@@ -15,15 +17,16 @@ const Header = (props) => {
         animSpeed,
         setAnimSpeed
     } = props;
+
     const toggleClass= (e) => {
         const a = document.getElementsByClassName('algorithms')[0];
         a.classList.toggle('aa');
     }
+
     const sortHelperR = () => {
-        sortHelper().then((help) => {
-            setRunning(help);
-        });
+        sortHelper();
     }
+    
     return (
         <header className='header'>
             <div className='container'>
@@ -35,19 +38,9 @@ const Header = (props) => {
                             onClick = {isRunning ? null: generateArray}
                             disabled={isRunning}
                             >
-                            <ShuffleIcon/>
+                            <FontAwesomeIcon icon={faRandom} size='1x' inverse/>
                             <span>Shuffle</span>
                         </button>
-                        {/* <select 
-                            className='select' 
-                            value={selectedAlgorithm} 
-                            onChange={(event) => setAlgorithm(event.target.value)}
-                            disabled={isRunning}>
-                                <option value='mergeSort'>Merge Sort</option>
-                                <option value='selectionSort'>Selection Sort</option>
-                                <option value='bubbleSort'>Bubble Sort</option>
-                                <option value='insertionSort'>Insertion Sort </option>
-                        </select> */}
                         <div className='algorithm-selection-container'>
                             <button onClick={toggleClass}>
                                 {selectedAlgorithm}
@@ -55,7 +48,7 @@ const Header = (props) => {
                             <div className='algorithms'>
                                 <ul>
                                     <li>Insertion Sort</li>
-                                    <li></li>
+                                    <li>BubbleSort</li>
                                 </ul>
                             </div>
                         </div>

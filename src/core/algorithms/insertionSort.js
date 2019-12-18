@@ -21,5 +21,4 @@ export const  insertionSort = (array) => {
         }  
     }
     return animation;
-    
 }

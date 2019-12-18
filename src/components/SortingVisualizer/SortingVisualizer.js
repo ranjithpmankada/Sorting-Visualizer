@@ -11,11 +11,11 @@ const SortingVisualizer = () => {
     /**
      * States
      */
-    const [array, setArray] = useState([]);
-    const [array_size, setArraySize] = useState(30);
-    const [selectedAlgorithm, setAlgorithm] = useState('insertionSort');
-    const [isRunning, setRunning] = useState(false);
-    const [animSpeed, setAnimSpeed] = useState(1000);
+    const [array, setArray] = useState([]); // Array to be sorted
+    const [array_size, setArraySize] = useState(30); // Array size
+    const [selectedAlgorithm, setAlgorithm] = useState('insertionSort'); // Select the algorithm
+    const [isRunning, setRunning] = useState(false); // Whether the sorting is running
+    const [animSpeed, setAnimSpeed] = useState(1000); // Animation speed
 
     // Function to generate new array and set the state 'array'
     const generateArray = () => {
@@ -37,6 +37,8 @@ const SortingVisualizer = () => {
         const animationArray = getAnimatedArray(arr, selectedAlgorithm);
         const arrayElements = document.getElementsByClassName('array-element');
         await animate(animationArray, arrayElements, animSpeed);  
+        setRunning(false);
+        setArray(array);
     };
 
     useState(() => {
