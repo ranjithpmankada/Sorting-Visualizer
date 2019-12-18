@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRandom } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 import './header.scss';
 
@@ -37,6 +38,7 @@ const Header = (props) => {
                             id='array_generate_button'
                             onClick = {isRunning ? null: generateArray}
                             disabled={isRunning}
+                            title = 'Generate new array'
                             >
                             <FontAwesomeIcon icon={faRandom} size='1x' inverse/>
                             <span>Shuffle</span>
@@ -44,11 +46,14 @@ const Header = (props) => {
                         <div className='algorithm-selection-container'>
                             <button onClick={toggleClass}>
                                 {selectedAlgorithm}
+                                <FontAwesomeIcon icon={faAngleDown} />
                             </button>
                             <div className='algorithms'>
-                                <ul>
-                                    <li>Insertion Sort</li>
-                                    <li>BubbleSort</li>
+                                <ul className='algorithm-list'>
+                                    <li><span>Insertion Sort</span></li>
+                                    <li><span>Bubble Sort</span></li>
+                                    <li><span>Quick Sort</span></li>
+                                    <li><span>Heap Sort</span></li>
                                 </ul>
                             </div>
                         </div>

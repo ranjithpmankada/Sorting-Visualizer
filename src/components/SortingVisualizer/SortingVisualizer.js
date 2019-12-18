@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Header from '../Header/Header';
 import Display from '../Display/Display';
@@ -41,10 +41,9 @@ const SortingVisualizer = () => {
         setArray(array);
     };
 
-    useState(() => {
+    useEffect(() => {
         generateArray();
-    });
-
+    }, array)
     return (
         <React.Fragment>
             <Header 
