@@ -122,17 +122,26 @@
     transform: scale(0);
     transform-origin: top;
     transition: transform 0.4s ease-in, opacity 0.4s ease-in;
+    &::before {
+        content: '';
+        display: block;
+        background-color: #1c2d57;
+    }
 }
 .algorithm-list {
-    box-shadow: 0 0 10px 3px rgba(100,100,100,0.1);
-    padding: 12px 18px;
+    box-shadow: 0 0 10px 3px rgba(100,100,100,0.3);
+    padding: 18px;
     margin: 0;
     & li {
         list-style-type: none;
         &:hover {
-            background-color: red;
+            & span {
+                background-color: #fff;
+                color: #1c2d57;
+            }
         }
         & span {
+            border-radius: 4px;
             color: rgba(255, 255, 255, 1);
             padding: 10px 12px;
             display: block;
@@ -145,7 +154,12 @@
     transform: scale(1);
     opacity: 1;
 }
-
+.algorithm-selector-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
 @media screen and ( min-width: 768px) {
     .shuffle-button {
         & svg { margin-right: 8px; }

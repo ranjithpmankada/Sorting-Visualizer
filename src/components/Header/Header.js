@@ -44,7 +44,7 @@ const Header = (props) => {
                             <span>Shuffle</span>
                         </button>
                         <div className='algorithm-selection-container'>
-                            <button onClick={toggleClass}>
+                            <button className='algorithm-selector-button' onClick={toggleClass}>
                                 {selectedAlgorithm}
                                 <FontAwesomeIcon icon={faAngleDown} />
                             </button>
