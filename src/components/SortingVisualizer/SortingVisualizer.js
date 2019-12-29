@@ -13,14 +13,14 @@ const SortingVisualizer = () => {
      */
     const [array, setArray] = useState([]); // Array to be sorted
     const [array_size, setArraySize] = useState(30); // Array size
-    const [selectedAlgorithm, setAlgorithm] = useState('insertionSort'); // Select the algorithm
+    const [selectedAlgorithm, setAlgorithm] = useState('bubbleSort'); // Select the algorithm
     const [isRunning, setRunning] = useState(false); // Whether the sorting is running
     const [animSpeed, setAnimSpeed] = useState(1000); // Animation speed
-
+    
     // Function to generate new array and set the state 'array'
     const generateArray = () => {
         const array = [];
-        const [min, max] = [1, 100];
+        const [min, max] = [1, array_size];
         while(array.length < array_size) {
             const number = Math.floor(Math.random()*(max - min + 1)) + min;
             if(!array.includes(number)) {
@@ -43,7 +43,8 @@ const SortingVisualizer = () => {
 
     useEffect(() => {
         generateArray();
-    }, array)
+    }, array);
+
     return (
         <React.Fragment>
             <Header 
@@ -61,6 +62,7 @@ const SortingVisualizer = () => {
             />
             <Display 
                 array={array} 
+                arraySize = {array_size}
             />
         </React.Fragment>
     );

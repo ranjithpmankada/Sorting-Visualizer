@@ -52,6 +52,7 @@ const Header = (props) => {
                                 <ul className='algorithm-list'>
                                     <li><span>Insertion Sort</span></li>
                                     <li><span>Bubble Sort</span></li>
+                                    <li><span>Merge Sort</span></li>
                                     <li><span>Quick Sort</span></li>
                                     <li><span>Heap Sort</span></li>
                                 </ul>

@@ -1,4 +1,4 @@
-    import { select, swap, compare, sortedValue } from './operations/operations';
+import { select, swap, compare, sortedValue } from './operations/operations';
 
 export const bubbleSort = array => {
     let i, j, animation = [];
