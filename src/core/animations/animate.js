@@ -19,6 +19,7 @@ export const getAnimatedArray = (array, algorithm) => {
 
 export const  animate = (animationArray, arrayElements, speed) => {
     return new Promise((resolve, reject) => {
+        console.log(animationArray)
         for(let i = 0; i < animationArray.length; i++) {
             setTimeout(() => {
                 const arrayElement1 = animationArray[i][1];

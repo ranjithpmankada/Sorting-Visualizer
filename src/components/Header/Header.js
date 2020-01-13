@@ -19,10 +19,10 @@ const Header = (props) => {
         setAnimSpeed
     } = props;
 
-    const algorithms = {
-        'bubbleSort': 'Bubble Sort',
-        'insertionSort': 'Insertion Sort',
-    }
+    const algorithms = [
+        {name: 'Bubble Sort', functionName: 'bubbleSort'},
+        {name: 'Insertion Sort', functionName:'insertionSort'}
+    ];
     const toggleClass= (e) => {
         const a = document.getElementsByClassName('algorithms')[0];
         a.classList.toggle('aa');
@@ -30,6 +30,10 @@ const Header = (props) => {
 
     const sortHelperR = () => {
         sortHelper();
+    }
+
+    const selectAlgorithm = name => {
+        setAlgorithm(name);
     }
 
     return (
@@ -49,16 +53,16 @@ const Header = (props) => {
                         </button>
                         <div className='algorithm-selection-container'>
                             <button className='algorithm-selector-button' onClick={toggleClass}>
-                                {selectedAlgorithm? algorithms[selectedAlgorithm] : null}
+                                {
+                                    algorithms.filter(algo => algo.functionName === selectedAlgorithm)[0].name
+                                }
                                 <FontAwesomeIcon style={{marginLeft: '8px'}} icon={faAngleDown} />
                             </button>
                             <div className='algorithms'>
                                 <ul className='algorithm-list'>
-                                    <li><span>Insertion Sort</span></li>
-                                    <li><span>Bubble Sort</span></li>
-                                    <li><span>Merge Sort</span></li>
-                                    <li><span>Quick Sort</span></li>
-                                    <li><span>Heap Sort</span></li>
+                                    {algorithms.map(algo => (
+                                        <li><span onClick = {() => selectAlgorithm(algo.functionName)}>{algo.name}</span></li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>

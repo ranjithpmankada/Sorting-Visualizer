@@ -20,5 +20,5 @@ export const  insertionSort = (array) => {
                 select(j, array, animation);
         }  
     }
-    return animation;
+    return {animation, array};
 }
