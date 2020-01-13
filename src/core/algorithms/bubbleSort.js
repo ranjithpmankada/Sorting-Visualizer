@@ -10,5 +10,5 @@ export const bubbleSort = array => {
         }
         sortedValue(j, array, animation);
     }
-    return animation;
+    return {animation, array};
 }

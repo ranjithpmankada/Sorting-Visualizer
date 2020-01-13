@@ -7,7 +7,6 @@ import SortingVisualizer from './components/SortingVisualizer/SortingVisualizer'
 const App = () => {  
     return (
       <React.Fragment>
-        <WelcomeScreen />
         <SortingVisualizer />
       </React.Fragment>
     )

@@ -35,15 +35,16 @@ const SortingVisualizer = () => {
         setRunning(true);
         let arr = array.slice(0);
         const animationArray = getAnimatedArray(arr, selectedAlgorithm);
+        console.log(animationArray.animation)
         const arrayElements = document.getElementsByClassName('array-element');
-        await animate(animationArray, arrayElements, animSpeed);  
+        await animate(animationArray.animation, arrayElements, animSpeed);  
         setRunning(false);
-        setArray(array);
+        setArray(animationArray.array);
     };
 
     useEffect(() => {
         generateArray();
-    }, array);
+    }, []);
 
     return (
         <React.Fragment>

@@ -9,7 +9,9 @@ export const getAnimatedArray = (array, algorithm) => {
             break;
         case 'bubbleSort':
             animations = bubbleSort(array);
-            break;  
+            break;
+        default: 
+            animations = null;
     }
     return animations;
 };
@@ -40,6 +42,9 @@ export const  animate = (animationArray, arrayElements, speed) => {
                         break;
                     case 'sortedValue':
                         arrayElements[arrayElement1].style.backgroundColor='#7E007B';
+                        break;
+                    default: 
+                        break;
 
                 }
                 if(i+1 === animationArray.length)
