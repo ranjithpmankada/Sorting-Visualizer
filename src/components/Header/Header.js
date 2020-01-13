@@ -21,7 +21,9 @@ const Header = (props) => {
 
     const algorithms = [
         {name: 'Bubble Sort', functionName: 'bubbleSort'},
-        {name: 'Insertion Sort', functionName:'insertionSort'}
+        {name: 'Insertion Sort', functionName:'insertionSort'},
+        {name: 'Heap Sort', functionName: 'heapSort'},
+        {name: 'Merge Sort', functionName: 'mergeSort'}
     ];
     const toggleClass= (e) => {
         const a = document.getElementsByClassName('algorithms')[0];
@@ -34,6 +36,7 @@ const Header = (props) => {
 
     const selectAlgorithm = name => {
         setAlgorithm(name);
+        toggleClass();
     }
 
     return (

@@ -1,5 +1,6 @@
 import { insertionSort } from '../algorithms/insertionSort';
 import { bubbleSort } from '../algorithms/bubbleSort';
+import {heapSort} from '../algorithms/heapSort'
 
 export const getAnimatedArray = (array, algorithm) => {
     let animations = [];
@@ -9,6 +10,9 @@ export const getAnimatedArray = (array, algorithm) => {
             break;
         case 'bubbleSort':
             animations = bubbleSort(array);
+            break;
+        case 'heapSort': 
+            animations = heapSort(array);
             break;
         default: 
             animations = null;
