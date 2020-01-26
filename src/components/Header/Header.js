@@ -21,7 +21,7 @@ const Header = (props) => {
 
     const algorithms = [
         {name: 'Bubble Sort', functionName: 'bubbleSort'},
-        {name: 'Insertion Sort', functionName:'insertionSort'},
+        {name: 'Insertion Sort', functionName:'insertionSort'}
     ];
     const toggleClass= (e) => {
         const a = document.getElementsByClassName('algorithms')[0];
