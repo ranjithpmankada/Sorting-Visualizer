@@ -13,7 +13,7 @@ const SortingVisualizer = () => {
      */
     const [array, setArray] = useState([]); // Array to be sorted
     const [array_size, setArraySize] = useState(30); // Array size
-    const [selectedAlgorithm, setAlgorithm] = useState('heapSort'); // Select the algorithm
+    const [selectedAlgorithm, setAlgorithm] = useState('insertionSort'); // Select the algorithm
     const [isRunning, setRunning] = useState(false); // Whether the sorting is running
     const [animSpeed, setAnimSpeed] = useState(1000); // Animation speed
     
