@@ -4,19 +4,22 @@ const Node = (props) => {
     const [height, setHeight] = useState(props.height);
     const [width, setWidth] = useState(props.width);
     const [index, setKey] = useState(props.key);
-    const [color, setColor] = useState();
-    useEffect(() => {
+    const [color, setColor] = useState(props.color);
+
+    useEffect( () => {
         setHeight(props.height)
         setWidth(props.width)
-    })
+        setColor(props.color)
+    }, [props.height, props.width, props.color]); 
+    
     return (               
         <div 
-            key = { index }
+            key = { height }
             className = {`${props.value} array-element`}
             style= {{
                 height: `${height}%`,
                 width: `${width}vw`,
-                backgroundColor: `rgba(66, 134, 244, 0.8)`,
+                backgroundColor: `${color}`,
                 marginRight: '1px'
                 }} 
             />
